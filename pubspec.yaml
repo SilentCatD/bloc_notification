@@ -1,6 +1,6 @@
 name: bloc_notification
 description: A Flutter package that helps separate the mechanism of responding to an action dispatched by BLoC from state.
-version: 1.0.0
+version: 1.0.0+1
 homepage: https://github.com/SilentCatD/bloc_notification
 
 environment:

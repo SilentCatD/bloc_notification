@@ -1,3 +1,5 @@
+[![pub package](https://img.shields.io/pub/v/bloc_notification?color=green&include_prereleases&style=plastic)](https://pub.dev/packages/bloc_notification)
+
 The `bloc_notification` package provides a mixin that separates the mechanism of responding to an
 action dispatched by a Flutter Bloc from the state. While using the bloc library, you may find that
 certain types of actions need to be handled in the UI layer, such as showing a dialog or navigating
