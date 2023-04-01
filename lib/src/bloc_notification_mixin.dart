@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 import 'bloc_notification.dart';
-import 'notification_observer.dart';
+import 'notification_observer_mixin.dart';
 
 /// The [BlocNotificationMixin] is a Flutter Bloc mixin that provides a simple
 /// notification mechanism for handling UI-related actions separately from the

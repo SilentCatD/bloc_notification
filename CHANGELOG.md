@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Change internal file name
+
 ## 1.1.0+1
 
 * Fix typo in docs
