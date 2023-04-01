@@ -1,3 +1,7 @@
+## 1.1.0+1
+
+* Fix typo in docs
+
 ## 1.1.0
 
 * No child bug fixed in `BlocNotificationListener`
