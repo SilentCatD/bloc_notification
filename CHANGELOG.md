@@ -1,3 +1,7 @@
+## 1.1.2
+
+* Add example file
+
 ## 1.1.1+1
 
 * Changes in README.

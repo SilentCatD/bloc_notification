@@ -100,10 +100,11 @@ BlocNotificationConsumer<MyBloc, MyState, MyNotification>(
   },
 );
 ```
+Do note that notification fired will NOT cause ui rebuilds.
 
 ### NotificationObserver
 
-Easily observer notifications fired from bloc/ cubit with simple act of mixin the existed `BlocObserver` 
+Easily observes notifications fired from bloc/ cubit by mixin the existed `BlocObserver` 
 
 ```dart
 class MyObserver extends BlocObserver with NotificationObserverMixin{
