@@ -7,17 +7,17 @@ import 'package:nested/nested.dart';
 import 'bloc_notification_mixin.dart';
 import 'type.dart';
 
-/// The `BlocNotificationListener` is a widget that listens for notifications
-/// from a `Bloc` that uses the `BlocNotificationMixin`, and passes them to a
-/// callback provided by the user. This widget is similar to the `BlocListener`
+/// The [BlocNotificationListener] is a widget that listens for notifications
+/// from a [BlocBase] that uses the [BlocNotificationMixin], and passes them to a
+/// callback provided by the user. This widget is similar to the [BlocListener]
 /// widget, but is specialized for handling notifications that are not tied to
 /// the state.
 ///
-/// To use the `BlocNotificationListener`, simply create an instance of the
+/// To use the [BlocNotificationListener], simply create an instance of the
 /// widget and provide a callback to handle the notifications. You can also
-/// provide an optional `BlocWidgetListener` to handle state changes,
-/// a `BlocListenerCondition` to conditionally listen to state changes, and a
-/// child widget to render below the `BlocNotificationListener`.
+/// provide an optional [BlocWidgetListener] to handle state changes,
+/// a [BlocListenerCondition] to conditionally listen to state changes, and a
+/// child widget to render below the [BlocNotificationListener].
 ///
 /// ```dart
 /// BlocNotificationListener<MyBloc, MyState, MyNotification>(
@@ -28,20 +28,26 @@ import 'type.dart';
 /// ```
 class BlocNotificationListener<B extends BlocNotificationMixin<S, N>, S, N>
     extends SingleChildStatefulWidget {
-  final BlocWidgetNotificationListener<N>? notificationListener;
-  final BlocWidgetListener<S>? listener;
-  final BlocListenerCondition<S>? listenWhen;
-  final B? bloc;
-  final Widget? child;
-
   const BlocNotificationListener({
     super.key,
+    super.child,
     this.notificationListener,
     this.listener,
     this.listenWhen,
     this.bloc,
-    this.child,
   });
+
+  /// Callback fired when there's notification notify from [BlocNotificationMixin]
+  final BlocWidgetNotificationListener<N>? notificationListener;
+
+  /// See [BlocListener.listener]
+  final BlocWidgetListener<S>? listener;
+
+  /// See [BlocListener.listenWhen]
+  final BlocListenerCondition<S>? listenWhen;
+
+  /// See [BlocListener.bloc]
+  final B? bloc;
 
   @override
   State<StatefulWidget> createState() =>

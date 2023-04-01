@@ -25,7 +25,9 @@ layer using the provided callback mechanism.
 - `BlocNotificationListener`: A widget that listens to notifications sent by the `BlocNotificationMixin`.
 - `BlocNotificationConsumer`: A widget that listens to notifications sent by the `BlocNotificationMixin` 
 and rebuilds the UI in response.
-- `Compatibility`: compatible with both `Bloc` and `Cubit`.
+- `NotificationObserver`: mixin to be used with `BlocObserver` to additionally listen to notification.
+- Easy migration: easily add features through multiple mixins, no extends needed.
+- Compatibility: compatible with both `Bloc` and `Cubit`.
 
 
 ## Usage
@@ -41,6 +43,11 @@ class MyBloc extends Bloc<MyEvent, MyState> with BlocNotificationMixin<MyState, 
   void performAction() {
     // ...
     notify(MyNotification());
+  }
+
+  @override
+  void onNotification(BlocNotification<MyNotification> blocNotification) {
+    // response to notification
   }
 }
 ```
@@ -85,12 +92,26 @@ notifications beside state changes. You can use it like this:
 ```dart
 BlocNotificationConsumer<MyBloc, MyState, MyNotification>(
   notificationListener: (BuildContext context, MyNotification notification) {
-    // Handle the notification here.
+    // ..
   },
   builder: (BuildContext context, MyState state) {
     // Build your widget here.
   },
 );
+```
+
+### NotificationObserver
+
+Easily observer notifications fired from bloc/ cubit with simple act of mixin the existed `BlocObserver` 
+
+```dart
+class MyObserver extends BlocObserver with NotificationObserver{
+  
+  @override
+  void onNotification(BlocBase bloc, BlocNotification notification) {
+    // ..
+  }
+}
 ```
 
 ## License

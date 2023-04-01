@@ -5,8 +5,8 @@ import 'bloc_notification_listener.dart';
 import 'bloc_notification_mixin.dart';
 import 'type.dart';
 
-/// Similar to the `BlocConsumer` widget, the `BlocNotificationConsumer` widget
-/// is used to wrap a `BlocNotificationListener` and take a `notificationListener`
+/// Similar to the [BlocConsumer] widget, the [BlocNotificationConsumer] widget
+/// is used to wrap a [BlocNotificationListener] and take a `notificationListener`
 /// callback.
 ///
 /// ```dart
@@ -31,11 +31,22 @@ class BlocNotificationConsumer<B extends BlocNotificationMixin<S, N>, S, N>
     this.buildWhen,
   }) : super(key: key);
 
+  /// See [BlocConsumer.bloc]
   final B? bloc;
+
+  /// Callback fired when there's notification notify from [BlocNotificationMixin]
   final BlocWidgetNotificationListener<N>? notificationListener;
+
+  /// See [BlocConsumer.builder]
   final BlocWidgetBuilder<S> builder;
+
+  /// See [BlocConsumer.listener]
   final BlocWidgetListener<S>? listener;
+
+  /// See [BlocConsumer.buildWhen]
   final BlocBuilderCondition<S>? buildWhen;
+
+  /// See [BlocConsumer.listenWhen]
   final BlocListenerCondition<S>? listenWhen;
 
   @override
