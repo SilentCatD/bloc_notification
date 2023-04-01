@@ -22,9 +22,10 @@ layer using the provided callback mechanism.
 ## Features
 
 - `BlocNotificationMixin`: A mixin that allows you to send notifications from a bloc to the UI layer.
-- `BlocNotificationListener`: A widget that listens to notifications sent by the `BlocNotificationMixin`.
+- `BlocNotificationListener`: A widget that listens to notifications sent by the `BlocNotificationMixin`
+that wrap `BlocListenser`.
 - `BlocNotificationConsumer`: A widget that listens to notifications sent by the `BlocNotificationMixin` 
-and rebuilds the UI in response.
+that wrap `BlocConsumer`
 - `NotificationObserverMixin`: mixin to be used with `BlocObserver` to additionally listen to notification.
 - Easy migration: easily add features through multiple mixins, no extends needed.
 - Compatibility: compatible with both `Bloc` and `Cubit`.
