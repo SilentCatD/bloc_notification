@@ -1,3 +1,8 @@
+## 1.1.2+1
+
+* Edit example
+* Edit doc
+
 ## 1.1.2
 
 * Add example file
