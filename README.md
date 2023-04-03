@@ -43,6 +43,7 @@ class MyBloc extends Bloc<MyEvent, MyState> with BlocNotificationMixin<MyState, 
 
   void performAction() {
     // ...
+    // `notify(...)` come with the mixin.
     notify(MyNotification());
   }
 
@@ -87,7 +88,7 @@ BlocNotificationListener<MyBloc, MyState, MyNotification>(
 
 ### BlocNotificationConsumer
 
-The `BlocNotificationConsumer` is similar to the BlocConsumer widget, but it listens for
+The `BlocNotificationConsumer` is similar to the `BlocConsumer` widget, but it listens for
 notifications beside state changes. You can use it like this:
 
 ```dart
